@@ -1,0 +1,156 @@
+      REACT
+...............................
+
+ROUTING:-process of navigating fron one page to another
+: in normal html,we use href is used for ROUTING
+:-but i react , we use  a library named react-router-dom
+
+   steps to for Routing
+   ..................
+
+1)install  react-router-dom (nom i react-router-dom)
+2)in main.jsx enclosed app components inside <BrowserRouter>
+    <BrowserRouter>
+    <APP/>
+    <BrowserRouter/>
+3)go to App.jsx whichever the components need to load based on path ,that components need to be placed inside <Route>< Routes/>
+4)how to add route to a components,inside <Route/> tag add the path and components to load 
+    <Routes>
+    <route path='/home'  element={<Home/>} 
+    <Routes/>
+
+
+How to load aspecific path from jsx
+----------------------------------
+:- for that we are using <LINK>tag
+syntax:<Link to={'/home}>Home<Link/>
+
+:- path="/" -default path,while loading the application ,what components need to load by default
+
+
+            Statelifting     (btwn siblings components)
+          -----------------
+   there are two components
+   1)add component   2) view components
+   :- user is uploading videos from add components and view components loads the already uploaded videos from backend .
+    - but here issue that , when user appload a videos,view component doesnt know the action performed by the user
+    - so user have to intimate view component that a new videos is uploaded from Add componenets
+    - by defualt,in react component communication is only possible from parent to childcomponents
+    - in our case the view and Add components are sibling components
+
+    Data communication in react
+    ---------------------------
+    for communication btwn unreleated components
+    1) redux
+    2)context Api
+
+    for sibling components
+    3)State lifting
+
+    for parent to child cummunication
+    4)props
+
+    State lifting
+    -------------
+  :- it is a mechanism used in react for communication btwn sibling components.
+  - sibling components are normal react components that have common parent.
+  - in stateLifting we create a common state in parent component and pass that state to siblings  
+
+         Drag and Drop
+         ------------
+-HTML support drag and Drop
+- there are 4 build in methods 
+
+1)draggable : if we want to drag an html element, we need to set the  draggable attribute to true for the element
+2)onDragStart :- it is call immediatly when dragging start
+3) onDragOver :- it is added as an event to the element,where the content need to be dropprd,
+                 - used to specify where the content to be droped
+4) onDrop:- call immediatly, when the dragged element is released on the element
+5) droppable:- on which component we are dropping make is as a droppble true
+
+
+
+
+                                            REDUX  
+                                  ............................
+
+props drilling : it describes the process of passing down data down through a component heirarcy as props.
+                  this tipically happens when a parent cmponent generate a data and then pass down through 
+                  its children,then that children pass down to its children and so on 
+
+:- intermediate components ,do not consume this props value, just passingdown its children
+
+
+   elongated props
+--------------------
+eg: props in home and child componenets
+
+- an elongated props is prop that is not consumed by the components ,but its only passing down to its child components
+
+COUPLING
+*********
+- Dependency btwn components is called couppling
+- prop drilling increaces coupling. that is not good , it increases Dependency
+  btwn components.so if one dependency component is fails,it affect the coupled componenets
+
+
+  REDUX 
+  ******
+
+  - it is a java script library
+  - it is used for state managment and data sharing btwn components
+  - it is not specific to react. it can be used withn any front- end -technology
+
+
+  mainly 3 components for redex
+  *****************************
+  1)store
+  2)action
+  3)reducer
+
+
+  STORE
+  ------
+ - here we create state 
+ - this state can be globaly accessible
+ - store is a state container that hold the application state 
+ - any components in the application can access the state inside the store 
+ - but components are not directly capable to updating the data in store
+ 
+
+ ACTION
+ ******
+ -  it hold logic to update the data  in store
+ - dispatch():- method that is called by the component to update and store
+     [function call in redux to update state in store]
+- payload :- response from the action, after updating the store
+- payload is created in store
+
+REDUCER
+*******
+- reducer is actually updating the state
+
+
+flow in redux is unidirectional(clockwise)
+
+- now redux isdeprecated,
+
+
+
+
+
+
+
+How to implement redux
+**********************
+- install redux toolkit
+
+  npm install @reduxjs/toolkit
+  npm install react-redux
+
+- create a folder with name redux ( any name can prefer)
+- inside this folder ,create store.js and counterSlice.js
+
+ 
+  
+
